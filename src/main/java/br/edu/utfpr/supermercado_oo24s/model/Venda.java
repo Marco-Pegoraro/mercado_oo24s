@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Compra {
+public class Venda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,4 +14,5 @@ public class Compra {
 
     public String cpf;
     public Double totalCompra;
+
 }

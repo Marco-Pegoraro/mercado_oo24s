@@ -1,5 +1,6 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
+import br.edu.utfpr.supermercado_oo24s.model.enums.TipoMovimento;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -24,4 +25,5 @@ public class Produto {
     public String descricao;
     public Double valor;
     public Integer quantidade;
+    public TipoMovimento tipoMovimento;
 }

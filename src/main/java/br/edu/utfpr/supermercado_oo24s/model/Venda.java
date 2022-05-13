@@ -1,9 +1,7 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Venda {
@@ -15,4 +13,6 @@ public class Venda {
     public String cpf;
     public Double totalCompra;
 
+    @OneToMany
+    public List<Produto> produtosVenda;
 }

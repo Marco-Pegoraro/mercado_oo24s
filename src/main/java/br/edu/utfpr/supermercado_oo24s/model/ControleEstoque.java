@@ -4,12 +4,13 @@ import br.edu.utfpr.supermercado_oo24s.model.enums.TipoMovimento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Builder
 public class ControleEstoque {
 

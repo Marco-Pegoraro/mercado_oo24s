@@ -1,4 +1,8 @@
 package br.edu.utfpr.supermercado_oo24s.service.CRUD;
 
-public class EstoqueService {
+import br.edu.utfpr.supermercado_oo24s.repository.EstoqueRepository;
+import org.springframework.stereotype.Service;
+
+@Service
+public record EstoqueService(EstoqueRepository estoqueRepository) {
 }

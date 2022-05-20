@@ -3,15 +3,16 @@ package br.edu.utfpr.supermercado_oo24s.model;
 import javax.persistence.*;
 
 @Entity
-public class Estoque {
+public class ProdutosVenda {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     public Integer id;
 
-    @OneToOne
+    @ManyToOne
+    public Venda venda;
+
+    @ManyToOne
     public Produto produto;
 
-    public String descricao;
-    public Integer quantidade;
 }

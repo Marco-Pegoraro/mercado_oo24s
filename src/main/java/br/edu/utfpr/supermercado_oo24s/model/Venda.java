@@ -13,6 +13,6 @@ public class Venda {
     public String cpf;
     public Double totalCompra;
 
-    @OneToMany
-    public List<Produto> produtosVenda;
+    @OneToMany(mappedBy = "produto")
+    public List<ProdutosVenda> produtosVenda;
 }

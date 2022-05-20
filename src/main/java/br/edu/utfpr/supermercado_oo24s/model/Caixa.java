@@ -2,8 +2,9 @@ package br.edu.utfpr.supermercado_oo24s.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Caixa {
@@ -14,6 +15,7 @@ public class Caixa {
     public Double valorTotalCaixa;
     public Date data;
 
-    @OneToOne
-    public Venda venda;
+    @OneToMany
+    public List<Venda> venda;
+
 }

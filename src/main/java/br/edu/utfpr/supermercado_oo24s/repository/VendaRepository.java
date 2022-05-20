@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.persistence.Id;
 
-public interface CompraRepository extends JpaRepository<Venda, Id> {
+public interface VendaRepository extends JpaRepository<Venda, Id> {
 }

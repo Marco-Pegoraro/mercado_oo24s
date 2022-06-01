@@ -1,6 +1,5 @@
 package br.edu.utfpr.supermercado_oo24s.service;
 
-import br.edu.utfpr.supermercado_oo24s.model.Produto;
 import br.edu.utfpr.supermercado_oo24s.model.ProdutosVenda;
 import br.edu.utfpr.supermercado_oo24s.model.Venda;
 

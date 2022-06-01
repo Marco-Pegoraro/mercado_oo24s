@@ -26,8 +26,14 @@ public record ControleEstoqueService(ControleEstoqueRepository controleEstoqueRe
         );
     }
 
-    public void controleSaida() {
-
+    public void controleSaida(Produto produto, Integer quantidade) {
+        controleEstoqueRepository.save(
+                ControleEstoque.builder()
+                        .produto(produto)
+                        .quantidadeMovimento(quantidade)
+                        .tipoMovimento(TipoMovimento.SAIDA)
+                        .build()
+        );
     }
 
 }

@@ -1,10 +1,29 @@
 package br.edu.utfpr.supermercado_oo24s.service;
 
+import br.edu.utfpr.supermercado_oo24s.model.Caixa;
+import br.edu.utfpr.supermercado_oo24s.model.Venda;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.InputMismatchException;
 
-public class ValidadorCPF {
+@Slf4j
+public class AtividadesCaixa {
 
-    public static boolean isCPF(String CPF) {
+    public Caixa iniciaCaixa() {
+        Caixa caixa = new Caixa();
+        return caixa;
+    }
+
+    public void AcumulaTotalCaixa(Venda venda) {
+        Double totalCaixa = venda.getTotalCompra();
+        log.info("Total caixa atualizado");
+    }
+
+    public void fechaCaixa() {
+
+    }
+
+    public boolean validaCPF(String CPF) {
         if (CPF.equals("00000000000") ||
                 CPF.equals("11111111111") ||
                 CPF.equals("22222222222") || CPF.equals("33333333333") ||
@@ -52,8 +71,4 @@ public class ValidadorCPF {
         }
     }
 
-    public static String imprimeCPF(String CPF) {
-        return(CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." +
-                CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
-    }
 }

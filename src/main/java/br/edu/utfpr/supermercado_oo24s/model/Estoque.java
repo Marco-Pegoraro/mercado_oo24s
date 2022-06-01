@@ -19,6 +19,5 @@ public class Estoque {
     @OneToOne
     public Produto produto;
 
-    public String descricao;
     public Integer quantidade;
 }

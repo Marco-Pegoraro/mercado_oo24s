@@ -1,9 +1,14 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Venda {
 
     @Id

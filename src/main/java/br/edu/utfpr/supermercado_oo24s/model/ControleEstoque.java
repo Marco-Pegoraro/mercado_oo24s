@@ -1,16 +1,14 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
 import br.edu.utfpr.supermercado_oo24s.model.enums.TipoMovimento;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
+@Getter
 @Builder
 public class ControleEstoque {
 

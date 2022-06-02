@@ -10,8 +10,8 @@ public class AtividadesVenda {
         return venda;
     }
 
-    public void adicionarProduto(Venda venda, ProdutosVenda produtoVenda) {
-        venda.produtosVenda.add(produtoVenda);
+    public void adicionarProduto() {
+
     }
 
     public void calculaTotalVenda(Venda venda) {

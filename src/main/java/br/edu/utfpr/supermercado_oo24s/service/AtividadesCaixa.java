@@ -4,15 +4,17 @@ import br.edu.utfpr.supermercado_oo24s.model.Caixa;
 import br.edu.utfpr.supermercado_oo24s.model.Venda;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.InputMismatchException;
+import java.time.Instant;
 
 @Slf4j
 public class AtividadesCaixa {
 
     private Double totalCaixa;
 
-    public Caixa iniciaCaixa() {
+    public Caixa iniciaCaixa(String nomeCaixa) {
         Caixa caixa = new Caixa();
+        caixa.setNomeCaixa(nomeCaixa);
+        caixa.setDataInicio(Instant.now());
         return caixa;
     }
 
@@ -21,8 +23,10 @@ public class AtividadesCaixa {
         log.info("Total caixa atualizado");
     }
 
-    public void fechaCaixa() {
-
+    public void fechaCaixa(Caixa caixa) {
+        caixa.setDataFim(Instant.now());
+        caixa.setValorTotalCaixa(totalCaixa);
+        totalCaixa = 0.0;
     }
 
 }

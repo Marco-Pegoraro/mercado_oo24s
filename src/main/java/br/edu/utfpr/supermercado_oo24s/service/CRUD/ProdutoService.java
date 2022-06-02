@@ -11,9 +11,7 @@ public record ProdutoService(ProdutoRepository produtoRepository,
 
     public void insereNovoProduto(Produto produto, Integer quantidade) {
         produtoRepository.save(produto);
-
         estoqueService.novoProduto(produto, quantidade);
-
         controleEstoqueService.controleEntrada(produto, quantidade);
     }
 

@@ -2,6 +2,7 @@ package br.edu.utfpr.supermercado_oo24s.service;
 
 import br.edu.utfpr.supermercado_oo24s.model.Caixa;
 import br.edu.utfpr.supermercado_oo24s.model.Venda;
+import br.edu.utfpr.supermercado_oo24s.repository.CaixaRepository;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
@@ -9,6 +10,7 @@ import java.time.Instant;
 @Slf4j
 public class AtividadesCaixa {
 
+    private static CaixaRepository caixaRepository;
     private Double totalCaixa;
 
     public Caixa iniciaCaixa(String nomeCaixa) {
@@ -26,6 +28,7 @@ public class AtividadesCaixa {
     public void fechaCaixa(Caixa caixa) {
         caixa.setDataFim(Instant.now());
         caixa.setValorTotalCaixa(totalCaixa);
+        caixaRepository.save(caixa);
         totalCaixa = 0.0;
     }
 

@@ -15,8 +15,4 @@ public record ProdutoService(ProdutoRepository produtoRepository,
         controleEstoqueService.controleEntrada(produto, quantidade);
     }
 
-    public void deletaProduto() {
-
-    }
-
 }

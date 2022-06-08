@@ -6,7 +6,6 @@ import br.edu.utfpr.supermercado_oo24s.model.Produto;
 import br.edu.utfpr.supermercado_oo24s.model.ProdutosVenda;
 import br.edu.utfpr.supermercado_oo24s.model.enums.TipoMovimento;
 import br.edu.utfpr.supermercado_oo24s.repository.ControleEstoqueRepository;
-import br.edu.utfpr.supermercado_oo24s.repository.EstoqueRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +25,16 @@ public record ControleEstoqueService(ControleEstoqueRepository controleEstoqueRe
         );
     }
 
-    public void controleSaida(Produto produto, Integer quantidade) {
-        controleEstoqueRepository.save(
-                ControleEstoque.builder()
-                        .produto(produto)
-                        .quantidadeMovimento(quantidade)
+    public void controleSaida(List<ProdutosVenda> produtos) {
+        log.info("Iniciando atualização de estoque");
+        produtos.stream()
+                .map(produtosVenda -> ControleEstoque.builder()
+                        .produto(produtosVenda.getProduto())
+                        .quantidadeMovimento(produtosVenda.getQuantidade())
                         .tipoMovimento(TipoMovimento.SAIDA)
-                        .build()
-        );
+                        .build())
+                .forEach(controleEstoqueRepository::save);
+        log.info("Atualização do estoque finalizada");
     }
 
 }

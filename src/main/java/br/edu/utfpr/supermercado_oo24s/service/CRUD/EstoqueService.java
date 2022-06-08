@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public record EstoqueService(EstoqueRepository estoqueRepository) {
+public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqueService controleEstoqueService) {
 
     public void novoProduto(Produto produto, Integer quantidade) {
         estoqueRepository.save(

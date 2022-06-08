@@ -23,6 +23,7 @@ public record ControleEstoqueService(ControleEstoqueRepository controleEstoqueRe
                         .tipoMovimento(TipoMovimento.ENTRADA)
                         .build()
         );
+        log.info("Entrada inserida");
     }
 
     public void controleSaida(List<ProdutosVenda> produtos) {

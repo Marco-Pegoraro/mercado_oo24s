@@ -14,12 +14,14 @@ import java.util.List;
 public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqueService controleEstoqueService) {
 
     public void novoProduto(Produto produto, Integer quantidade) {
+        log.info("Inserindo" + produto.getNome());
         estoqueRepository.save(
                 Estoque.builder()
                         .produto(produto)
                         .quantidade(quantidade)
                         .build()
         );
+        log.info("Produto cadastrado");
     }
 
     public void atualizaEstoque(List<ProdutosVenda> produtos) {

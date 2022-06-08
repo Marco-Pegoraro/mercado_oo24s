@@ -17,12 +17,13 @@ public class AtividadesCaixa {
         Caixa caixa = new Caixa();
         caixa.setNomeCaixa(nomeCaixa);
         caixa.setDataInicio(Instant.now());
+        log.info("Caixa: " + nomeCaixa + "iniciado");
         return caixa;
     }
 
     public void AcumulaTotalCaixa(Venda venda) {
         totalCaixa = venda.getTotalCompra();
-        log.info("Total caixa atualizado");
+        log.info("Total do caixa atualizado");
     }
 
     public void fechaCaixa(Caixa caixa) {
@@ -30,6 +31,7 @@ public class AtividadesCaixa {
         caixa.setValorTotalCaixa(totalCaixa);
         caixaRepository.save(caixa);
         totalCaixa = 0.0;
+        log.info("Caixa: " + caixa.getNomeCaixa() + " fechado com sucesso.");
     }
 
 }

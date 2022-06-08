@@ -1,9 +1,6 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 @Setter
+@Getter
 public class Caixa {
 
     @Id

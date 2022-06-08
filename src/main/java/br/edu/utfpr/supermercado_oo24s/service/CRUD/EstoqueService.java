@@ -33,7 +33,15 @@ public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqu
         log.info("Atualização do estoque finalizada");
     }
 
-    public void devolucaoProduto(Produto produto) {
+    public void devolucaoProduto(Produto produto, Integer quantidade) {
+        log.info("Iniciando devolução do produto - " + produto.getNome());
+        estoqueRepository.saveAndFlush(
+                Estoque.builder()
+                        .produto(produto)
+                        .quantidade(quantidade)
+                        .build()
+        );
+        controleEstoqueService.controleEntrada(produto, quantidade);
         log.info(produto.getNome() + " devolvido(a) com sucesso");
     }
 }

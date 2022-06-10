@@ -7,17 +7,18 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Getter
 @Setter
 public class Venda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer id;
+    private Integer id;
 
-    public String cpf;
-    public Double totalCompra;
+    private String cpf;
+
+    @Getter
+    private Double totalCompra;
 
     @OneToMany(mappedBy = "produto")
-    public List<ProdutosVenda> produtosVenda;
+    private List<ProdutosVenda> produtosVenda;
 }

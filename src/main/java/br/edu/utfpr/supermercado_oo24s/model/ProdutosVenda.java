@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -16,14 +15,16 @@ public class ProdutosVenda {
 
     @Id
     @GeneratedValue
-    public Integer id;
+    private Integer id;
 
     @ManyToOne
-    public Venda venda;
+    private Venda venda;
 
     @ManyToOne
-    public Produto produto;
+    @Getter
+    private Produto produto;
 
-    public Integer quantidade;
+    @Getter
+    private Integer quantidade;
 
 }

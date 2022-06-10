@@ -35,7 +35,7 @@ public record ControleEstoqueService(ControleEstoqueRepository controleEstoqueRe
                         .tipoMovimento(TipoMovimento.SAIDA)
                         .build())
                 .forEach(controleEstoqueRepository::save);
-        log.info("Atualização do estoque finalizada");
+        log.info("Atualização do controle de saida finalizada");
     }
 
 }

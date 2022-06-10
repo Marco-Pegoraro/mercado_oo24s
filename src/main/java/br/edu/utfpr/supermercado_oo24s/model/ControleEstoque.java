@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Builder
 public class ControleEstoque {
 

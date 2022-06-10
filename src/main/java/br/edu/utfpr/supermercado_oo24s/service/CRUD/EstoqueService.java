@@ -39,6 +39,7 @@ public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqu
         log.info("Iniciando devolução do produto - " + produto.getNome());
         estoqueRepository.saveAndFlush(
                 Estoque.builder()
+                        .id(produto.getId())
                         .produto(produto)
                         .quantidade(quantidade)
                         .build()

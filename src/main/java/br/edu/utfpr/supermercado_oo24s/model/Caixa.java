@@ -15,17 +15,18 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 @Setter
-@Getter
 public class Caixa {
 
     @Id
-    public Integer id;
-    public String nomeCaixa;
-    public Double valorTotalCaixa;
-    public Instant dataInicio;
-    public Instant dataFim;
+    private Integer id;
+
+    @Getter
+    private String nomeCaixa;
+    private Double valorTotalCaixa;
+    private Instant dataInicio;
+    private Instant dataFim;
 
     @OneToMany
-    public List<Venda> venda;
+    private List<Venda> venda;
 
 }

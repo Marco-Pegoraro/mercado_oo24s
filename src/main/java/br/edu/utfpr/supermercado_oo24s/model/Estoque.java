@@ -14,10 +14,10 @@ public class Estoque {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer id;
+    private Integer id;
 
     @OneToOne
-    public Produto produto;
+    private Produto produto;
 
-    public Integer quantidade;
+    private Integer quantidade;
 }

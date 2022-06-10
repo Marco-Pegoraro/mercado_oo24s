@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -17,9 +15,12 @@ import javax.persistence.Id;
 public class Produto {
 
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer id;
+    private Integer id;
 
-    public String nome;
-    public Double valor;
+    @Getter
+    private String nome;
+
+    private Double valor;
 }

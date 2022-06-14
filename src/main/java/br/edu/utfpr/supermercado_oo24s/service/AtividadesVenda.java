@@ -7,7 +7,7 @@ import br.edu.utfpr.supermercado_oo24s.repository.VendaRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public record AtividadesVenda(VendaRepository vendaRepository) {
+public record AtividadesVenda(VendaRepository vendaRepository, ValidadorCPF validadorCPF) {
 
     public Venda iniciaVenda() {
         Venda venda = new Venda();
@@ -31,7 +31,28 @@ public record AtividadesVenda(VendaRepository vendaRepository) {
     }
 
     public void fechaVenda(Venda venda, String cpf) {
-
+        log.info("Iniciando fechamento de venda");
+        if(validadorCPF.verificaCPF(cpf) == true) {
+            vendaRepository.save(
+                    Venda.builder()
+                            .id(venda.getId())
+                            .cpf(cpf)
+                            .totalCompra(calculaTotalVenda(venda))
+                            .build()
+            );
+            log.info("Venda finalizada");
+        }
+        else
+        {
+            vendaRepository.save(
+                    Venda.builder()
+                            .id(venda.getId())
+                            .cpf("CPF INVALIDO OU NÃO INFORMADO")
+                            .totalCompra(calculaTotalVenda(venda))
+                            .build()
+            );
+            log.info("Venda finalizada");
+        }
     }
 
 }

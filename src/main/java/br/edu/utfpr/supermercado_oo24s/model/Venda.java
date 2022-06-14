@@ -1,16 +1,19 @@
 package br.edu.utfpr.supermercado_oo24s.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Setter
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Builder
 public class Venda {
 
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 

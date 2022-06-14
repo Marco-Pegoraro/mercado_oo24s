@@ -28,6 +28,7 @@ public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqu
         log.info("Iniciando atualização de estoque");
         produtos.stream()
                         .map(produtosVenda -> Estoque.builder()
+                                .id(produtosVenda.getId())
                                 .produto(produtosVenda.getProduto())
                                 .quantidade(produtosVenda.getQuantidade())
                                 .build())
@@ -37,7 +38,7 @@ public record EstoqueService(EstoqueRepository estoqueRepository, ControleEstoqu
 
     public void devolucaoProduto(Produto produto, Integer quantidade) {
         log.info("Iniciando devolução do produto - " + produto.getNome());
-        estoqueRepository.saveAndFlush(
+        estoqueRepository.save(
                 Estoque.builder()
                         .id(produto.getId())
                         .produto(produto)

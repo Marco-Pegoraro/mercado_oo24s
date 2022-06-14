@@ -18,6 +18,7 @@ import java.util.List;
 public class Caixa {
 
     @Id
+    @Getter
     private Integer id;
 
     @Getter

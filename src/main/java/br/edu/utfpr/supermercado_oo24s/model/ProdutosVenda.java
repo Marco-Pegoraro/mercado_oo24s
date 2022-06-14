@@ -15,6 +15,7 @@ public class ProdutosVenda {
 
     @Id
     @GeneratedValue
+    @Getter
     private Integer id;
 
     @ManyToOne

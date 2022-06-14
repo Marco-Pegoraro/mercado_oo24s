@@ -20,5 +20,6 @@ public class Venda {
     private Double totalCompra;
 
     @OneToMany(mappedBy = "produto")
+    @Getter
     private List<ProdutosVenda> produtosVenda;
 }

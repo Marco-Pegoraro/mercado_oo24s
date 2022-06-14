@@ -23,7 +23,6 @@ public class AtividadesCaixa {
 
     public void AcumulaTotalCaixa(Venda venda) {
         totalCaixa = venda.getTotalCompra();
-        //mandar direto pro banco o total.
         log.info("Total do caixa atualizado");
     }
 

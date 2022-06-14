@@ -8,5 +8,4 @@ import javax.persistence.Id;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Id> {
-
 }

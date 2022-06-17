@@ -27,5 +27,8 @@ public class ProdutosVenda {
 
     @Getter
     private Integer quantidade;
+    
+    @Getter 
+    private Double valorUnitario;
 
 }

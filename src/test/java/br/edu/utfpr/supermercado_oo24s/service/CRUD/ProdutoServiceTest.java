@@ -1,4 +1,4 @@
 package br.edu.utfpr.supermercado_oo24s.service.CRUD;
 
-public class ProdutoService {
+public class ProdutoServiceTest {
 }

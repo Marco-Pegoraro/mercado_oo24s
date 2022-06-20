@@ -21,7 +21,7 @@ public class AtividadesCaixa {
         return caixa;
     }
 
-    public void AcumulaTotalCaixa(Venda venda) {
+    public void acumulaTotalCaixa(Venda venda) {
         totalCaixa = venda.getTotalCompra();
         log.info("Total do caixa atualizado");
     }

@@ -9,7 +9,7 @@ public class ValidadorCPFTest {
     private ValidadorCPF underTest;
 
     @Test
-    void testeCPFValido() {
+    void testaCPFInvalido() {
         //given
         String cpf = "11111111111";
 
@@ -21,7 +21,7 @@ public class ValidadorCPFTest {
     }
 
     @Test
-    void testeCPFInvalido() {
+    void testaCPFValido() {
         //given
         String cpf = "11350616966";
 

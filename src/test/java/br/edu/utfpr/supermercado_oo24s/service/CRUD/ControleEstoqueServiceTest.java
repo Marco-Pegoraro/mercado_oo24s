@@ -7,8 +7,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class ControleEstoqueServiceTest {
 
-
-
     @Test
     void testaControleSaida() {
 

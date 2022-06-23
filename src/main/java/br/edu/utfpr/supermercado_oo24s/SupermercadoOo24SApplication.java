@@ -1,8 +1,6 @@
 package br.edu.utfpr.supermercado_oo24s;
 
 import br.edu.utfpr.supermercado_oo24s.model.Produto;
-import br.edu.utfpr.supermercado_oo24s.service.AtividadesVenda;
-import br.edu.utfpr.supermercado_oo24s.service.CRUD.EstoqueService;
 import br.edu.utfpr.supermercado_oo24s.service.CRUD.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -30,30 +28,6 @@ public class SupermercadoOo24SApplication {
                         .valor(15.50)
                         .build()
                 , 20
-        );
-
-        produtoService.insereNovoProduto(
-                Produto.builder()
-                        .nome("Refri Qualquer")
-                        .valor(12.00)
-                        .build()
-                , 10
-        );
-
-        produtoService.insereNovoProduto(
-                Produto.builder()
-                        .nome("Suco Qualquer")
-                        .valor(5.00)
-                        .build()
-                , 15
-        );
-
-        produtoService.insereNovoProduto(
-                Produto.builder()
-                        .nome("Sorvete Qualquer")
-                        .valor(9.99)
-                        .build()
-                , 30
         );
     }
 }

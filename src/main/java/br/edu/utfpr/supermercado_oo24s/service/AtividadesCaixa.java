@@ -4,10 +4,12 @@ import br.edu.utfpr.supermercado_oo24s.model.Caixa;
 import br.edu.utfpr.supermercado_oo24s.model.Venda;
 import br.edu.utfpr.supermercado_oo24s.repository.CaixaRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
 @Slf4j
+@Component
 public class AtividadesCaixa {
 
     private static CaixaRepository caixaRepository;

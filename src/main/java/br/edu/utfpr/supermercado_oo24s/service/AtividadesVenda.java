@@ -5,10 +5,10 @@ import br.edu.utfpr.supermercado_oo24s.model.ProdutosVenda;
 import br.edu.utfpr.supermercado_oo24s.model.Venda;
 import br.edu.utfpr.supermercado_oo24s.repository.VendaRepository;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Slf4j
+@Component
 public record AtividadesVenda(VendaRepository vendaRepository, ValidadorCPF validadorCPF) {
 
     public Venda iniciaVenda() {

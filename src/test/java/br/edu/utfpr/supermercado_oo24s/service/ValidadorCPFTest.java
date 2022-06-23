@@ -1,5 +1,6 @@
 package br.edu.utfpr.supermercado_oo24s.service;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -7,6 +8,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class ValidadorCPFTest {
 
     private ValidadorCPF underTest;
+
+    @BeforeEach
+    void setUp() {
+        underTest = new ValidadorCPF();
+    }
 
     @Test
     void testaCPFInvalido() {

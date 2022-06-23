@@ -1,7 +1,10 @@
 package br.edu.utfpr.supermercado_oo24s.service;
 
+import org.springframework.stereotype.Component;
+
 import java.util.InputMismatchException;
 
+@Component
 public class ValidadorCPF {
 
     public boolean verificaCPF(String CPF) {

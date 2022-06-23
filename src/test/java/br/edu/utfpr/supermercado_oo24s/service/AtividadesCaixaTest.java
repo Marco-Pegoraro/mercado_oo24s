@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 public class AtividadesCaixaTest {
 
+
+
     @Test
     void testaIniciaCaixa() {
 

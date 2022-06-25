@@ -24,7 +24,11 @@ public class AtividadesCaixaTest {
         var result = underTest.iniciaCaixa(nomeCaixa);
 
         //then
-        assertThat(result).isExactlyInstanceOf(Caixa.class);
+        assertThat(result)
+                .isExactlyInstanceOf(Caixa.class)
+                .hasFieldOrProperty("nomeCaixa")
+                .extracting(Caixa::getNomeCaixa)
+                .isEqualTo(nomeCaixa);
     }
 
     @Test

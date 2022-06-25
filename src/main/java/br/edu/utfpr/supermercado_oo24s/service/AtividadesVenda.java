@@ -37,7 +37,7 @@ public record AtividadesVenda(VendaRepository vendaRepository, ValidadorCPF vali
 
     public void fechaVenda(Venda venda, String cpf) {
         log.info("Iniciando fechamento de venda");
-        if(validadorCPF.verificaCPF(cpf) == true) {
+        if(validadorCPF.verificaCPF(cpf)) {
             vendaRepository.save(
                     Venda.builder()
                             .id(venda.getId())
@@ -59,5 +59,4 @@ public record AtividadesVenda(VendaRepository vendaRepository, ValidadorCPF vali
             log.info("Venda finalizada");
         }
     }
-
 }
